@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ElCarroRentale.Areas.API.ResponseFactory.Base;
+using ElCarroRentale.Data;
 using ElCarroRentale.Interfaces.ResponseFactory.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -28,6 +30,7 @@ namespace ElCarroRentale
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddDbContext<ApplicationDbContext>(x=>x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             
             // Add DBContext, AddScoped<>, AddAutoMapper
             services.AddScoped<IUrlBuilder, UrlBuilder>();
