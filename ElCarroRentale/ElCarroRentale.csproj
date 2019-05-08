@@ -13,7 +13,7 @@
     <ItemGroup>
       <Folder Include="Areas\API\AutoMapper\Mapping" />
       <Folder Include="Areas\API\AutoMapper\Resources" />
-      <Folder Include="Areas\API\ResponseFactory\ResponseObjects" />
+      <Folder Include="Areas\API\ResponseFactory\Building" />
       <Folder Include="Domain\Repositories" />
       <Folder Include="Domain\Services" />
     </ItemGroup>
