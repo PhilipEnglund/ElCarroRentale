@@ -1,18 +1,12 @@
-using System;
-
-namespace ElCarroRentale.Domain.Entities
+namespace ElCarroRentale.Areas.API.AutoMapper.Resources
 {
-    public class Car
+    public class CarResource
     {
         public int Id { get; set; }
         public string RegistrationNumber { get; set; }
         public double HorsePower { get; set; }
         public string Brand { get; set; }
         public string Colour { get; set; }
-        public DateTime LastInspection { get; set; }
-        public DateTime NextInspection { get; set; }
-        public string LatestInspector { get; set; }
-        public int Milage { get; set; }
         public double HourlyRate { get; set; }
         public bool AvailableForRent { get; set; }
     }
